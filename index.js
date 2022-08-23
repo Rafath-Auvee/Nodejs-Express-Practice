@@ -9,7 +9,11 @@ app.get("/", (req, res) => {
   // res.status(500).json({message: "ERROR"})
   // res.json({message: "ERROR"})
   // res.download("index.js");
-  res.render("index", { text: world });
+  res.render("index", { text: "World" });
 });
+
+const userRouter = require('./routes/users.js')
+
+app.use("/users", userRouter)
 
 app.listen(3000);
